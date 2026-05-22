@@ -1,0 +1,136 @@
+\documentclass[letterpaper,10pt]{article}
+\renewcommand{\baselinestretch}{0.97}
+
+\usepackage[top=0.4in,bottom=0.4in,left=0.6in,right=0.6in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{fontawesome}
+\usepackage{array}
+\usepackage{microtype}
+\usepackage{raleway}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue
+}
+
+\pagenumbering{gobble}
+\setlength{\parindent}{0pt}
+
+% Section formatting: bold uppercase title with horizontal rule beneath
+\titleformat{\section}
+  {\large\bfseries}
+  {}
+  {0pt}
+  {}[\vspace{1pt}\hrule height 0.5pt\vspace{2pt}]
+\titlespacing*{\section}{0pt}{3pt}{1pt}
+
+\titleformat{\subsection}
+  {\normalsize\bfseries}
+  {}
+  {0pt}
+  {}
+\titlespacing*{\subsection}{0pt}{4pt}{1pt}
+
+% Custom command for experience entries with right-aligned date
+\newcommand{\experience}[4]{%
+  \noindent\textbf{#1}\hfill\textbf{#2}\\
+  \textit{#3}\hfill\textit{#4}\par\vspace{-2pt}
+}
+
+\setlist[itemize]{leftmargin=12pt,topsep=3pt,itemsep=4pt,parsep=0pt}
+
+\begin{document}
+
+% Header
+\begin{center}
+    {\huge\bfseries VIKHYAT CHAUHAN}\\[4pt]
+    +1-201-616-6373 $\mid$ \href{mailto:vikhyat.chauhan@gmail.com}{vikhyat.chauhan@gmail.com} $\mid$ \href{https://linkedin.com/in/vikhyat-chauhan}{LinkedIn} $\mid$ \href{https://github.com/vikhyat-chauhan}{GitHub} $\mid$ \href{https://vikhyatchauhan.com/?ref=resume051626c}{Portfolio}
+\end{center}
+
+\section*{SUMMARY}
+{{SUMMARY}}
+
+\section*{SKILLS}
+{{SKILLS}}
+
+\section*{PROFESSIONAL EXPERIENCE}
+
+\experience{Virginia Polytechnic Institute and State University}{2024 - 2026}{Graduate AI/ML Researcher}{Blacksburg, VA}
+\begin{itemize}
+    \item Designed and experimentally validated a brain-inspired UAV navigation system achieving 34.6\% reduction in compute energy and elapsed time over baseline (p0.0001, n=1,000 runs, 3 real-world-mapped environments) - NSF-funded
+    \item Architected a LangGraph + Llama 3 multi-agent system for grammar-constrained SDF XML generation, automating 100+ simulation environments and eliminating 40 hours/week of manual authoring.
+\end{itemize}
+
+\experience{GE HealthCare}{2022 - 2024}{Software Engineer II}{Bengaluru, IN}
+\begin{itemize}
+    \item Led the technical architecture migration from a legacy C++ monolith to Kubernetes-based Java/Spring Boot services, reducing MRI application runtime by 80\%, by designing and implementing image normalization and segmentation algorithms in C++.
+    \item Profiled and optimized a Swin Transformer segmentation model end-to-end - ONNX export, FP16 precision tuning, custom CUDA/C++ plugin authoring for unsupported ops, and layer fusion via TensorRT builder API - achieving 20\% throughput uplift on FDA-regulated hardware enabling real-time intraoperative use.
+    \item Developed a multimodal MRI report generation system (MedCLIP, PyTorch, TensorRT) fusing scan sequences with patient history, achieving quantifiable impact with a 6.5\% improvement in diagnostic classification F1 over baselines.
+    \item Introduced automated quality gates and CI/CD pipelines (Jenkins, SonarQube) for production deployment and optimization, reducing release defects by 60\% while maintaining 0 patient-safety regressions across 12 quarterly releases.
+\end{itemize}
+
+\experience{TNM Electronics}{2020 - 2022}{Software Engineer I}{Bengaluru, IN}
+\begin{itemize}
+    \item Owned the full platform from day one; architected an AWS-backed microservice backend (EC2, Lambda, RabbitMQ, MongoDB, MQTT broker), scaling from 0 to 1000+ devices while sustaining 99.9\% uptime.
+    \item Conceived and patented a master-slave microcontroller communication system for home automation, cutting final product BOM cost 80\% and directly enabling first design-win customers.
+    \item Reduced field bug reports 98\% vs. prior manual integration method by designing a structured hardware-software validation workflow as the company's sole engineer.
+\end{itemize}
+
+\section*{PROJECTS}
+
+\subsection*{\href{https://github.com/Vikhyat-Chauhan/ProfessionalRAG}{Professional RAG Pipeline}}
+\begin{itemize}
+    \item Built a two-stage retrieval pipeline (BGE-base embeddings $\rightarrow$ MS-MARCO Cross-Encoder reranker) evaluated with Hit@K and MRR metrics; LLM-as-judge scoring showed consistent faithfulness gains over single-stage retrieval across 50+ test queries - implemented from scratch without LangChain.
+    \item Implemented SHA-256 query hashing for semantic caching, reducing LLM API overhead by 30\%; added per-query token/cost tracking for full inference observability.
+    \item Deployed as a containerized microservice on Google Cloud Run with latency instrumentation by stage and grounded generation logic to eliminate model hallucinations.
+\end{itemize}
+
+\subsection*{Web Automation Agent}
+\begin{itemize}
+    \item Built a multi-step agentic browser automation system using LangGraph orchestration and Browser Use for DOM interaction, powered by a locally-quantized Qwen model on RTX 5060 Ti - no cloud API dependency.
+    \item Designed novel agentic workflows with stateful task graphs, retry logic, conditional branching, and form-filling across multi-page web workflows.
+    \item Achieved \textasciitilde60s end-to-end task completion with sub-300ms first-token latency on local inference.
+\end{itemize}
+
+\subsection*{\href{https://github.com/Vikhyat-Chauhan/BioelectronicsAiWesad.git}{Physiological Stress Classifier}}
+\begin{itemize}
+     \item Developed a Conv1D Autoencoder pipeline to compress high-dimensional physiological data (BVP, EDA, EMG, TEMP) from wearable sensors into compact unsupervised representations.
+    \item Engineered a multimodal classification system on the WESAD dataset, achieving 83.5\% accuracy in three-class emotion detection across 15 subjects.
+    \item Implemented preprocessing and normalization for heterogeneous sensor sampling rates, transforming raw bio-signals into features for real-time stress monitoring.
+\end{itemize}
+
+\subsection*{\href{https://github.com/Vikhyat-Chauhan/CANavigator}{CANavigator — Brain-Inspired Drone Navigation Framework}}
+\begin{itemize}
+    \item Architected a modular ROS 2 + Gazebo Harmonic simulation stack with procedural city-grid and Perlin-noise NFZ generators, deterministic seeded RNG for bit-exact replay, and a physics-accurate DJI FlyCart 30 dynamics model (2nd-order actuator latency, aerodynamic drag, Ornstein-Uhlenbeck wind gusts).
+    \item Implemented a dual energy model tracking CPU computational cost alongside motion energy (208.9 J/m EPM baseline), with per-strategy CSV telemetry across 8 metrics including compute latency, zone violations, and event deadline miss rates.
+    \item Designed a fair head-to-head benchmarking protocol — all four planners (APE1/APE2/APE3/CA) navigate identical procedurally generated arenas with shared event sequences, with only runs where all strategies reach the target counted toward the 1,000-run corpus.
+\end{itemize}
+
+\section*{EDUCATION}
+
+\experience{Virginia Polytechnic Institute and State University}{Aug 2024 - May 2026}{M.S., Computer Engineering (Thesis Track)}{Blacksburg, VA}
+\begin{itemize}
+    \item \textbf{Achievements:} Defended M.S. Thesis on {\href{https://github.com/Vikhyat-Chauhan/CANavigator}{Brain Inspired Drone Navigation System using MISD Architecture} 4.0 GPA}
+    \item \textbf{Coursework:} CS5424: Advanced Machine Learning, CS5465: Applications of Machine Learning, ECE5504: Computer Architecture
+\end{itemize}
+
+\experience{Uttarakhand Technical University}{Jul 2016 - Dec 2020}{B.E., Electronics and Communication Engineering}{Uttarakhand, IN}
+\begin{itemize}
+    \item \textbf{Achievements:} Graduated with First Division
+\end{itemize}
+
+\section*{AWARDS \& RECOGNITION}
+\begin{itemize}
+    \item \textbf{Patent Co-Inventor:} Master-Slave Microcontroller Communication System for Home Automation, TNM Electronics
+    \item \textbf{GE Impact Award:} Recognized for independently modernizing a critical legacy MR imaging application to production microservices, directly improving clinical software delivery at scale
+    \item \textbf{NSF-Funded Graduate Research Assistant:} Supported on NSF Award \#2204780 (CCF: Small: Paradox and Brain-inspired Computer Architecture, PI: JoAnn M. Paul); contributed significantly to thesis research on brain-inspired autonomous systems
+    \item \textbf{Honor Society of Phi Kappa Phi:} Inducted, Virginia Tech Chapter (2026); top 10\% of Master's graduate students across all disciplines
+    \item \textbf{Omicron Delta Kappa National Leadership Honor Society:} Selected for membership, Alpha Omicron Circle, Virginia Tech (2026 Cohort); recognizes achievement in academics, research, and service
+\end{itemize}
+
+\end{document}

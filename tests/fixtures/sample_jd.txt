@@ -1,0 +1,28 @@
+Senior Machine Learning Engineer — LLM Systems
+Acme AI, San Francisco CA (Remote OK)
+
+About the Role
+We are looking for a Senior ML Engineer to join our LLM Systems team. You will build and optimize
+large-language-model inference pipelines, design RAG architectures for our enterprise search product,
+and collaborate with platform engineers to deploy models on GCP and AWS at scale.
+
+Responsibilities
+- Design and implement production LLM inference pipelines with low-latency requirements
+- Build and maintain RAG systems using vector databases (ChromaDB, Pinecone, or similar)
+- Optimize model throughput using TensorRT, ONNX, and quantization techniques
+- Write clean, production-quality Python with strong typing and test coverage
+- Collaborate with MLOps to containerize and deploy on Kubernetes / Cloud Run
+
+Requirements
+- 3+ years of ML engineering experience in production environments
+- Strong Python skills; C++ a plus for performance-critical components
+- Experience with PyTorch, Hugging Face Transformers
+- Hands-on experience with LangChain or LangGraph for agentic workflows
+- Familiarity with cloud platforms: GCP or AWS
+- Experience with Docker and Kubernetes
+
+Nice to Have
+- TensorRT or ONNX optimization experience
+- Background in medical imaging or other regulated-domain ML
+- Experience with autonomous systems or robotics (ROS 2)
+- MS or PhD in CS, EE, or related field
