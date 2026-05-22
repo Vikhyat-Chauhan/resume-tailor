@@ -1,0 +1,7 @@
+.env
+.venv/
+outputs/
+__pycache__/
+*.egg-info/
+dist/
+data/master_resume.json

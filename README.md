@@ -19,7 +19,7 @@ flowchart LR
     B --> C2[tailor_agent\nSkills call]
     D([master_resume.json]) --> C1 & C2
     C1 & C2 --> E[TailoredOutput\nsummary · skills]
-    E --> F[resume_builder\n{{SUMMARY}} + {{SKILLS}} → pdflatex]
+    E --> F[resume_builder\nSUMMARY + SKILLS slots → pdflatex]
     F --> G([outputs/company_role_date.pdf])
     C1 & C2 --> H([outputs/tailor.log\ntokens · cost per call])
 ```
